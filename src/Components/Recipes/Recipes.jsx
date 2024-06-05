@@ -68,8 +68,16 @@ const handleTotalCalories=(calorie)=>{
 
                 {
                     recipes.map(recipe=><div key={recipe.id}>
-                       <img src={recipe.image} alt="" srcset="" /> 
+                       <img src={recipe.img} alt="" srcset="" /> 
                         <h3>{recipe.title}</h3>
+                        <p>{recipe.description}</p>
+                        <h3>ingredient : {recipe.ingredients.length}</h3>
+                       {
+                        recipe.ingredients.map((ingredient, index)=><div key={index}>
+                            <ul>{ingredient}</ul>
+                        </div>)
+                       }
+
                         <h5>time : {recipe.time}</h5>
                         <h5>calories : {recipe.calories}</h5>
                         <button onClick={()=>handleWantToCook(recipe)} className="bg-orange-100">Want to cook</button>
