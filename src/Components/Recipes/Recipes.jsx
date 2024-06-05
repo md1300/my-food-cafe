@@ -102,33 +102,48 @@ const handleTotalCalories=(calorie)=>{
                 
             </div>
          </div>
-         <div className="1/3">
-              <div>
-                <h1>Want To Cook {wantCooks.length}</h1>
+         <div className="w-1/3 p-5">
+              <div className="my-5">
+                <h1>Want To Cook : {wantCooks.length}</h1>
+                <div className="grid grid-cols-3">
+                    <h3>name</h3>
+                    <h3>time</h3>
+                    <h3>calories</h3>
+                </div>
                     {
-                        wantCooks.map(wantCook=><div key={wantCook.id}>
+                        wantCooks.map(wantCook=><div className="grid grid-cols-3" key={wantCook.id}>
                             <h1>{wantCook.title}</h1>
-                            <h3>{wantCook.title}minutes</h3>
+                            <h3>{wantCook.time}minutes</h3>
                             <h3>{wantCook.calories} calories</h3>
-                            <button onClick={()=>{handleRemoveCooking(wantCook),handleStartCooking(wantCook),handleTotalTime(wantCook),handleTotalCalories(wantCook)}} className="bg-stone-800 text-white">preparing</button>
+                            <button onClick={()=>{handleRemoveCooking(wantCook),handleStartCooking(wantCook),handleTotalTime(wantCook),handleTotalCalories(wantCook)}} className="bg-green-300 rounded-2xl text-white">preparing</button>
                           </div>)
                     }
               </div>
-              <div>
+              {/* kaj finish */}
+              <div className="my-5">
                 <h1>Currently Cooking : {startCooking.length}</h1>
+                <div className="grid grid-cols-3">
+                    <h3>name</h3>
+                    <h3>time</h3>
+                    <h3>calories</h3>
+                </div>
                   {
-                      startCooking.map(cooking=><div key={cooking.id}>
+                      startCooking.map(cooking=><div className="grid grid-cols-3" key={cooking.id}>
                        <h2>{cooking.title}</h2>
+                       <h2>{cooking.time} minute</h2>
+                       <h2>{cooking.calories} calories</h2>
                       </div>)  
                   }
               </div>
-
-              <div>
+              {/* kaj finish */}
+              <div className="flex justify-end gap-4">
+                   <div>
                  <h1>total time : {times}</h1>
-              </div>
-              <div>
+                   </div>
+                   <div>
                 <h1>total calories : {calories}</h1>
-              </div>
+                   </div>
+              </div> 
           </div> 
         </div>    
     </div>

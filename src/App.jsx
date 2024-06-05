@@ -10,7 +10,6 @@ function App() {
   return (
     <>
      <div className='bg-slate-200 m-4'>
-         <h1 className='text-3xl text-center'> React</h1>
          <Navbar ></Navbar>
          <Banner></Banner>
          <Recipes></Recipes>
